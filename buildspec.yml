@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+  build:
+    commands:
+      - echo Zipping application...
+      - zip -r app.zip . -x "*.git*"  # Zip everything except .git
+
+artifacts:
+  files:
+    - app.zip
